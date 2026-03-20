@@ -1,5 +1,4 @@
 /* GENERAL PAGE */
-
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -12,10 +11,7 @@ body {
     padding: 10px;
 }
 
-
-
 /* HEADER */
-
 .top-bar {
     display: grid;
     grid-template-columns: 70px 1fr;
@@ -32,6 +28,8 @@ body {
 
 .logo {
     width: 30px;
+    height: auto;
+    display: block;
 }
 
 nav {
@@ -47,14 +45,12 @@ nav a {
     padding: 15px 0;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     background: #f5f5f5;
 }
 
-
-
 /* CLASS SECTION */
-
 .classes-section {
     border: 1px solid #888;
     padding: 30px;
@@ -76,10 +72,7 @@ nav a:hover {
     font-size: 18px;
 }
 
-
-
-/* ADD BUTTON */
-
+/* BUTTONS */
 .add-button-wrap {
     text-align: right;
     margin-top: 10px;
@@ -92,10 +85,7 @@ button {
     cursor: pointer;
 }
 
-
-
 /* NOTES SECTION */
-
 .notes-section {
     display: flex;
     justify-content: center;
@@ -106,16 +96,14 @@ button {
     width: 60%;
     border: 1px solid #888;
     padding: 25px;
+    box-sizing: border-box;
 }
 
 .notes-container h2 {
     margin-top: 0;
 }
 
-
-
 /* NOTE ROWS */
-
 .note-row {
     display: grid;
     grid-template-columns: 25px 1fr;
@@ -132,43 +120,44 @@ button {
 }
 
 .empty-row {
-    height: 40px;
+    align-items: start;
 }
 
-
+#noteInput {
+    width: 100%;
+    min-height: 70px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px;
+    resize: vertical;
+}
 
 /* PUBLISH BUTTON */
-
 .publish-button-wrap {
     text-align: right;
+    margin-top: 10px;
 }
 
-
-
 /* FOOTER */
-
 footer {
     margin-top: 50px;
     border: 1px solid #888;
     display: grid;
-    grid-template-columns: 150px 1fr 200px;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 15px;
-}
-
-.footer-logo {
-    font-weight: bold;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-.footer-links a {
-    text-decoration: none;
-    color: black;
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-weight: bold;
 }
 
 .social-links {

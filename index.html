@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NoteSpace Home</title>
+  <title>NoteSpace</title>
   <link rel="stylesheet" href="styles/notespace.css">
 </head>
 
@@ -26,7 +26,6 @@
     </header>
 
     <main class="home-page">
-
       <section class="classes-section">
         <div class="classes-grid">
           <div class="class-box">Class 1</div>
@@ -76,12 +75,11 @@
           </div>
 
           <div class="publish-button-wrap">
-            <button class="publish-btn" type="button" onclick="publishNote()">publish</button>
-            <button class="remove-note-btn" type="button" onclick="removeNote()">remove</button>
+            <button class="publish-btn" type="button" onclick="publishNote()">Publish</button>
+            <button class="remove-note-btn" type="button" onclick="removeNote()">Remove</button>
           </div>
         </div>
       </section>
-
     </main>
 
     <footer>
@@ -90,7 +88,6 @@
         <span class="footer-text">NOTESPACE @ 2026</span>
       </div>
 
-
       <div class="social-links">
         <a href="https://www.instagram.com" target="_blank">Instagram</a>
         <a href="https://www.facebook.com" target="_blank">Facebook</a>
@@ -98,78 +95,57 @@
       </div>
     </footer>
 
-    <script>
-      function addClass() {
-        const grid = document.querySelector(".classes-grid");
-        const classCount = grid.children.length + 1;
-
-        const newClass = document.createElement("div");
-        newClass.classList.add("class-box", "added-class");
-        newClass.textContent = "Class " + classCount;
-
-        grid.appendChild(newClass);
-      }
-
-      function removeClass() {
-        const grid = document.querySelector(".classes-grid");
-        const addedClasses = grid.querySelectorAll(".added-class");
-
-        if (addedClasses.length > 0) {
-          addedClasses[addedClasses.length - 1].remove();
-        }
-      }
-    </script>
-    <script>
-      function addClass() {
-        const grid = document.querySelector(".classes-grid");
-        const classCount = grid.children.length + 1;
-
-        const newClass = document.createElement("div");
-        newClass.classList.add("class-box", "added-class");
-        newClass.textContent = "Class " + classCount;
-
-        grid.appendChild(newClass);
-      }
-
-      function removeClass() {
-        const grid = document.querySelector(".classes-grid");
-        const addedClasses = grid.querySelectorAll(".added-class");
-
-        if (addedClasses.length > 0) {
-          addedClasses[addedClasses.length - 1].remove();
-        }
-      }
-
-      function publishNote() {
-        const noteInput = document.getElementById("noteInput");
-        const publishedNotes = document.getElementById("publishedNotes");
-        const noteText = noteInput.value.trim();
-
-        if (noteText !== "") {
-          const newNote = document.createElement("div");
-          newNote.classList.add("note-row", "added-note");
-
-          newNote.innerHTML = `
-            <div class="circle"></div>
-            <p>${noteText}</p>
-            `;
-
-          publishedNotes.appendChild(newNote);
-          noteInput.value = "";
-        }
-      }
-
-      function removeNote() {
-        const publishedNotes = document.getElementById("publishedNotes");
-        const addedNotes = publishedNotes.querySelectorAll(".added-note");
-
-        if (addedNotes.length > 0) {
-          addedNotes[addedNotes.length - 1].remove();
-        }
-      }
-    </script>
-
   </div>
+
+  <script>
+    function addClass() {
+      const grid = document.querySelector(".classes-grid");
+      const classCount = grid.children.length + 1;
+
+      const newClass = document.createElement("div");
+      newClass.classList.add("class-box", "added-class");
+      newClass.textContent = "Class " + classCount;
+
+      grid.appendChild(newClass);
+    }
+
+    function removeClass() {
+      const grid = document.querySelector(".classes-grid");
+      const addedClasses = grid.querySelectorAll(".added-class");
+
+      if (addedClasses.length > 0) {
+        addedClasses[addedClasses.length - 1].remove();
+      }
+    }
+
+    function publishNote() {
+      const noteInput = document.getElementById("noteInput");
+      const publishedNotes = document.getElementById("publishedNotes");
+      const noteText = noteInput.value.trim();
+
+      if (noteText !== "") {
+        const newNote = document.createElement("div");
+        newNote.classList.add("note-row", "added-note");
+
+        newNote.innerHTML = `
+          <div class="circle"></div>
+          <p>${noteText}</p>
+        `;
+
+        publishedNotes.appendChild(newNote);
+        noteInput.value = "";
+      }
+    }
+
+    function removeNote() {
+      const publishedNotes = document.getElementById("publishedNotes");
+      const addedNotes = publishedNotes.querySelectorAll(".added-note");
+
+      if (addedNotes.length > 0) {
+        addedNotes[addedNotes.length - 1].remove();
+      }
+    }
+  </script>
 </body>
 
 </html>
