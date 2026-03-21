@@ -86,10 +86,9 @@
 
     <footer>
       <div class="footer-logo">
-        <img src="images/logo.png" alt="NoteSpace Logo" class="logo">
+        <img src="images/logo.png" alt="NoteSpace Logo" class="footer-logo-img">
         <span class="footer-text">NOTESPACE @ 2026</span>
       </div>
-
 
       <div class="social-links">
         <a href="https://www.instagram.com" target="_blank">Instagram</a>
@@ -98,78 +97,57 @@
       </div>
     </footer>
 
-    <script>
-      function addClass() {
-        const grid = document.querySelector(".classes-grid");
-        const classCount = grid.children.length + 1;
-
-        const newClass = document.createElement("div");
-        newClass.classList.add("class-box", "added-class");
-        newClass.textContent = "Class " + classCount;
-
-        grid.appendChild(newClass);
-      }
-
-      function removeClass() {
-        const grid = document.querySelector(".classes-grid");
-        const addedClasses = grid.querySelectorAll(".added-class");
-
-        if (addedClasses.length > 0) {
-          addedClasses[addedClasses.length - 1].remove();
-        }
-      }
-    </script>
-    <script>
-      function addClass() {
-        const grid = document.querySelector(".classes-grid");
-        const classCount = grid.children.length + 1;
-
-        const newClass = document.createElement("div");
-        newClass.classList.add("class-box", "added-class");
-        newClass.textContent = "Class " + classCount;
-
-        grid.appendChild(newClass);
-      }
-
-      function removeClass() {
-        const grid = document.querySelector(".classes-grid");
-        const addedClasses = grid.querySelectorAll(".added-class");
-
-        if (addedClasses.length > 0) {
-          addedClasses[addedClasses.length - 1].remove();
-        }
-      }
-
-      function publishNote() {
-        const noteInput = document.getElementById("noteInput");
-        const publishedNotes = document.getElementById("publishedNotes");
-        const noteText = noteInput.value.trim();
-
-        if (noteText !== "") {
-          const newNote = document.createElement("div");
-          newNote.classList.add("note-row", "added-note");
-
-          newNote.innerHTML = `
-            <div class="circle"></div>
-            <p>${noteText}</p>
-            `;
-
-          publishedNotes.appendChild(newNote);
-          noteInput.value = "";
-        }
-      }
-
-      function removeNote() {
-        const publishedNotes = document.getElementById("publishedNotes");
-        const addedNotes = publishedNotes.querySelectorAll(".added-note");
-
-        if (addedNotes.length > 0) {
-          addedNotes[addedNotes.length - 1].remove();
-        }
-      }
-    </script>
-
   </div>
+
+  <script>
+    function addClass() {
+      const grid = document.querySelector(".classes-grid");
+      const classCount = grid.children.length + 1;
+
+      const newClass = document.createElement("div");
+      newClass.classList.add("class-box", "added-class");
+      newClass.textContent = "Class " + classCount;
+
+      grid.appendChild(newClass);
+    }
+
+    function removeClass() {
+      const grid = document.querySelector(".classes-grid");
+      const addedClasses = grid.querySelectorAll(".added-class");
+
+      if (addedClasses.length > 0) {
+        addedClasses[addedClasses.length - 1].remove();
+      }
+    }
+
+    function publishNote() {
+      const noteInput = document.getElementById("noteInput");
+      const publishedNotes = document.getElementById("publishedNotes");
+      const noteText = noteInput.value.trim();
+
+      if (noteText !== "") {
+        const newNote = document.createElement("div");
+        newNote.classList.add("note-row", "added-note");
+
+        newNote.innerHTML = `
+          <div class="circle"></div>
+          <p>${noteText}</p>
+        `;
+
+        publishedNotes.appendChild(newNote);
+        noteInput.value = "";
+      }
+    }
+
+    function removeNote() {
+      const publishedNotes = document.getElementById("publishedNotes");
+      const addedNotes = publishedNotes.querySelectorAll(".added-note");
+
+      if (addedNotes.length > 0) {
+        addedNotes[addedNotes.length - 1].remove();
+      }
+    }
+  </script>
 </body>
 
 </html>

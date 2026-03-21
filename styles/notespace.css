@@ -1,7 +1,8 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: white;
+    color: black;
 }
 
 #content {
@@ -11,8 +12,7 @@ body {
 }
 
 
-
-/*header*/
+/* HEADER */
 
 .top-bar {
     display: grid;
@@ -26,37 +26,47 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .logo {
     width: 30px;
+    height: auto;
 }
 
 nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    background-color: #e6e6e6;
 }
 
 nav a {
-    text-decoration: none;
-    color: black;
-    border: 1px solid #888;
+    text-decoration: underline;
+    color: blue;
+    border: 1px solid #777;
     text-align: center;
     padding: 15px 0;
 }
 
 nav a:hover {
-    background: #f5f5f5;
+    background-color: #d9d9d9;
 }
 
 
+/* HOME PAGE */
 
-/*class section*/
+.home-page {
+    margin-top: 25px;
+}
+
+
+/* CLASS SECTION */
 
 .classes-section {
     border: 1px solid #888;
     padding: 30px;
     margin-top: 25px;
+    background-color: white;
 }
 
 .classes-grid {
@@ -72,27 +82,41 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     font-size: 18px;
-}
-
-
-
-/*add button*/
-
-.add-button-wrap {
-    text-align: right;
-    margin-top: 10px;
-}
-
-button {
-    border: 1px solid #888;
-    background: white;
-    padding: 6px 12px;
+    background-color: white;
     cursor: pointer;
 }
 
+.class-box:hover {
+    background-color: #e6e6e6;
+}
 
 
-/*notes section*/
+/* ADD + REMOVE CLASS BUTTONS */
+
+.add-button-wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-btn,
+.remove-btn {
+    border: 1px solid #888;
+    background-color: white;
+    color: black;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+.add-btn:hover,
+.remove-btn:hover {
+    background-color: #e6e6e6;
+}
+
+
+/* NOTES SECTION */
 
 .notes-section {
     display: flex;
@@ -104,15 +128,18 @@ button {
     width: 60%;
     border: 1px solid #888;
     padding: 25px;
+    background-color: #d9d9d9;
 }
 
 .notes-container h2 {
     margin-top: 0;
+    font-family: "Patrick Hand", cursive;
+    font-size: 40px;
+    color: black;
 }
 
 
-
-/*notes*/
+/* NOTE ROWS */
 
 .note-row {
     display: grid;
@@ -121,52 +148,92 @@ button {
     margin-bottom: 20px;
 }
 
+.note-row p {
+    margin: 0;
+    line-height: 1.4;
+}
+
 .circle {
     width: 16px;
     height: 16px;
     border: 1px solid #888;
     border-radius: 50%;
     margin-top: 5px;
+    background-color: white;
 }
 
 .empty-row {
-    height: 40px;
+    align-items: start;
 }
 
 
+/* NOTE INPUT */
 
-/*publish button*/
+#noteInput {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid #888;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    padding: 8px;
+    resize: none;
+    background-color: white;
+    color: black;
+}
+
+
+/* PUBLISH + REMOVE NOTE BUTTONS */
 
 .publish-button-wrap {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.publish-btn,
+.remove-note-btn {
+    border: 1px solid #888;
+    background-color: blue;
+    color: white !important;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+.publish-btn:hover,
+.remove-note-btn:hover {
+    background-color: #0033cc;
+    color: white !important;
 }
 
 
-
-/*footer*/
+/* FOOTER */
 
 footer {
     margin-top: 50px;
     border: 1px solid #888;
     display: grid;
-    grid-template-columns: 150px 1fr 200px;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 15px;
+    background-color: white;
 }
 
 .footer-logo {
-    font-weight: bold;
-}
-
-.footer-links {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.footer-links a {
-    text-decoration: none;
+.footer-logo-img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-text {
+    font-weight: bold;
     color: black;
+    white-space: nowrap;
 }
 
 .social-links {
@@ -176,6 +243,55 @@ footer {
 }
 
 .social-links a {
-    text-decoration: none;
-    color: black;
+    color: blue;
+    text-decoration: underline;
+}
+
+.social-links a:hover {
+    color: darkblue;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+    .classes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .notes-container {
+        width: 80%;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top-bar {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        grid-template-columns: 1fr;
+    }
+
+    .classes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notes-container {
+        width: 100%;
+    }
+
+    .footer-logo {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
 }
