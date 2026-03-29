@@ -8,19 +8,37 @@
 body {
   font-family: "Poppins";
   margin: 0;
-  background-color: #13315c;
-  display: flex;
+  background-color: white;
+  display: grid;
   justify-content: center;
   padding: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(1fr 3);
+}
+
+main {
+  display: block;
+  margin-top: 100px;
 }
 
 .calendar {
-  background: #fffbea;
-  width: 90%;
-  max-width: 700px;
+  display: none;
+  background: white;
+  width: 75%;
+  min-height: 400px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar:target {
+  display: block;
 }
 
 .header {
@@ -46,12 +64,17 @@ body {
 .dates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  grid-auto-rows: 100px;
+}
+
+.dates a{
+  min-height: 60px;
+  overflow: hidden;
 }
 
 .day {
   border: 1px solid #ddd;
-  background-color: #f5f7fb;
+  background-color: #fffbea;
   min-height: 80px;
   padding: 4px;
   font-size: 14px;
@@ -61,13 +84,9 @@ body {
   color: black;
 }
 
-.day:hover {
-  background: #f2f6ff;
-}
-
 .off_month_day {
   border: 1px solid #ddd;
-  background-color: #f5f7fb;
+  background-color: #fffbea;
   min-height: 80px;
   padding: 4px;
   font-size: 14px;
@@ -76,12 +95,9 @@ body {
   text-decoration: none;
 }
 
-.day:hover {
-  background: #f2f6ff;
-}
-
 .holiday {
-  background: #3882f6;
+  background: #265AA9;
+  color: white;
   font-size: 12px;
   margin-top: 3px;
   padding: 2px;
@@ -126,7 +142,7 @@ body {
 
 .event-btn {
   padding: 6px 12px;
-  background: #3882f6;
+  background: #265AA9;
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -158,23 +174,11 @@ body {
   border: 2px solid black;
 }
 
-.calendar {
-  display: none;
-}
-
-.calendar:target {
-  display: block;
-}
-
-#jan {
-  display: block;
-}
-
 .calendar_nav_link {
   display: flex;
   padding: 6px 12px;
-  background-color: #3882f6;
-  color: white;
+  background-color: #fffbea;
+  color: black;
   text-decoration: none;
   border-radius: 6px;
   font-size: 16px;
@@ -189,7 +193,6 @@ body {
 }
 
 .calendar_nav_link:hover {
-  background-color: #2f6fd1;
   transform: scale(1.05);
 }
 
@@ -207,8 +210,8 @@ body {
 .new-event-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #3882f6;
-  color: white;
+  background-color: #fffbea;
+  color: black;
   font-weight: bold;
   font-size: 16px;
   border-radius: 8px;
@@ -219,7 +222,6 @@ body {
 }
 
 .new-event-button:hover {
-  background-color: #2f6fd1;
   transform: scale(1.05);
 }
 
