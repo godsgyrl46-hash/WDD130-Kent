@@ -57,12 +57,21 @@ nav a:hover {
 
 
 /* Body */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 #info {
     display: grid;
     grid-template-columns:90px 135px 1fr;
     border: #000000 solid 2.5px;
     width: 90%;
+    height: 1000px;
     margin: 0 auto;
     margin-top: 50px;
     border-radius: 5px;
